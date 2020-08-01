@@ -15,7 +15,7 @@ def movie_list_daily(date):
     for movie in movies:
         a_tag = movie.select_one('td.title > div > a')
         if a_tag is not None:
-            rank = movie.select_one('td:nth-child(1) > img')['alt']  # img 태그의 alt 속성값을 가져오기
+            rank = movie.select_one('td > img')['alt']  # img 태그의 alt 속성값을 가져오기
             title = a_tag.text  # a 태그 사이의 텍스트를 가져오기
             star = movie.select_one('td.point').text  # td 태그 사이의 텍스트를 가져오기
             db[collection].insert_one({'rank':rank,'title':title,'star':star})
