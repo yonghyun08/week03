@@ -20,7 +20,7 @@ def movie_list_daily(date):
             star = movie.select_one('td.point').text  # td 태그 사이의 텍스트를 가져오기
             db[collection].insert_one({'rank':rank,'title':title,'star':star})
 
-print(movie_list_daily('20190502'))
+print(movie_list_daily('20190608'))
 print(movie_list_daily('20180502'))
 
 
